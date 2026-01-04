@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next-Layer WebCrafters</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Changed: black + gold theme */
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #000000, #0b0b0b); color: #f7ead6; }
+    .hero { background: linear-gradient(135deg, #0b0b0b, #2b1f0d); color: #f7ead6; padding: 120px 20px; text-align: center; }
+    .hero h1 { font-size: 3.5rem; text-shadow: 0 2px 8px rgba(0,0,0,0.7); letter-spacing: 1px; color: #ffd873; }
+    .hero p { font-size: 1.3rem; font-weight: 300; text-shadow: 0 1px 4px rgba(0,0,0,0.5); color: #f3e9c9; }
+    .hero .btn { background: linear-gradient(90deg,#ffd873,#d4af37); color: #0b0b0b; font-weight: 600; border: none; transition: 0.3s; }
+    .hero .btn:hover { filter: brightness(1.03); transform: scale(1.03); }
+    .section-title { font-weight: 700; margin-bottom: 40px; color: #ffe8a8; }
+    .service-card, .case-card { background: rgba(212,175,55,0.04); padding: 25px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.08); box-shadow: 0 5px 18px rgba(0,0,0,0.6); color: #f7edd4; transition: 0.3s; }
+    .service-card:hover, .case-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.7); }
+    a.btn-light { background: linear-gradient(90deg,#fff2c6,#ffd873); color: #0b0b0b; border: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero" data-aos="fade-down">
+    <h1 class="display-4 fw-bold">Next-Layer WebCrafters</h1>
+    <p class="lead mt-3">We craft modern, fast & stunning websites for businesses.</p>
+    <a href="#services" class="btn btn-dark btn-lg mt-4">Our Services</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="container py-5" id="about">
+    <h2 class="section-title text-center" data-aos="fade-up">About Us</h2>
+    <p class="text-center lead" data-aos="fade-up" data-aos-delay="100">Next Layer Web Crafters is a modern web development agency since 2025, focused on building high-performance, visually appealing, and business-driven digital solutions. We specialize in creating responsive websites, e-commerce platforms, and custom web experiences that help brands grow, engage users, and convert visitors into customers.<br>
+
+Our approach combines clean UI/UX design, scalable development, and performance optimization to deliver results-oriented websites. From concept to deployment, we ensure every project meets modern standards, loads fast, and aligns with the client’s business goals.<br>
+
+At Next Layer Web Crafters, we don’t just build websites — we craft digital experiences that create impact, trust, and long-term value.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="container py-5" id="services">
+    <h2 class="section-title text-center" data-aos="fade-up">Our Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="50"><div class="service-card text-center">Website Design</div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="service-card text-center">E-Commerce Development</div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150"><div class="service-card text-center">UI/UX Design</div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><div class="service-card text-center">WordPress Development</div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="250"><div class="service-card text-center">Front-End Development</div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300"><div class="service-card text-center">SEO & Digital Marketing</div></div>
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section class="container py-5" id="case-studies">
+    <h2 class="section-title text-center" data-aos="fade-up">Case Studies</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-right" data-aos-delay="50">
+        <div class="case-card">
+          <h4 class="fw-bold mb-3">Website Design</h4>
+          <p><strong>🛑 Problem:</strong> Brand needed a modern visual identity and clearer conversion paths.</p>
+          <p><strong>🛠 Approach:</strong> Crafted a polished UI, clear CTAs, and responsive layouts focused on UX.</p>
+          <p><strong>🚀 Results:</strong> Improved engagement, longer session durations, higher lead capture.</p>
+          <p><strong>🧰 Tools:</strong> Figma, HTML, CSS, Bootstrap</p>
+          <div class="text-end mt-3">
+            <a href="case3-details.html" class="btn btn-light">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="case-card">
+          <h4 class="fw-bold mb-3">Business Website Redesign</h4>
+          <p><strong>🛑 Problem:</strong> Old website was slow and outdated.</p>
+          <p><strong>🛠 Approach:</strong> Modern UI, responsive sections, optimized speed.</p>
+          <p><strong>🚀 Results:</strong> Page speed 48 → 92, bounce rate -40%, more leads.</p>
+          <p><strong>🧰 Tools:</strong> HTML, CSS, Bootstrap, JS</p>
+          <div class="text-end mt-3">
+            <a href="case1-details.html" class="btn btn-light">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-left" data-aos-delay="150">
+        <div class="case-card">
+          <h4 class="fw-bold mb-3">E-Commerce Store Setup</h4>
+          <p><strong>🛑 Problem:</strong> Needed fast & clean store for 50+ products.</p>
+          <p><strong>🛠 Approach:</strong> Product grid, quick cart, UI/UX optimized.</p>
+          <p><strong>🚀 Results:</strong> Loading time -60%, sales conversions up.</p>
+          <p><strong>🧰 Tools:</strong> WordPress, WooCommerce, PHP, Elementor</p>
+          <div class="text-end mt-3">
+            <a href="case2-details.html" class="btn btn-light">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="text-center py-5" style="background: linear-gradient(135deg, #0b0b0b, #3a2a0d);" id="contact" data-aos="fade-up">
+    <h2 class="fw-bold mb-3" style="color:#ffd873">Contact Us</h2>
+    <p style="color:#f3e9c9">Have a project in mind? Let's create something amazing together.</p>
+    <a href="contact.html" class="btn btn-light btn-lg mt-3">Get In Touch</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4" style="background:#070707; color:#d4af37;">© 2025 Next-Layer WebCrafters</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
