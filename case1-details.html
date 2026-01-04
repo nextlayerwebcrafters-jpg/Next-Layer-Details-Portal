@@ -7,12 +7,23 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    /* Changed: black + gold theme */
-    body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#000000,#0b0b0b);color:#f7ead6}
-    .card-pane{background:rgba(212,175,55,0.04);padding:30px;border-radius:12px;border:1px solid rgba(212,175,55,0.08);box-shadow:0 8px 24px rgba(0,0,0,0.6)}
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #000000, #0b0b0b); color: #f7ead6; }
+    .card-pane{background:rgba(212,175,55,0.04);padding:30px;border-radius:12px;border:1px solid rgba(212,175,55,0.08);box-shadow:0 5px 18px rgba(0,0,0,0.6);color:#f7edd4}
     a.btn-light{background:linear-gradient(90deg,#fff2c6,#ffd873);color:#0b0b0b;border:none}
-    h1, h4 { color: #ffd873; }
-    p, li { color: #f3e9c9; }
+    h1,h2,h4{color:#ffd873}
+    label{color:#f3e9c9}
+
+    /* Responsive adjustments */
+    @media (max-width: 991.98px) {
+      .card-pane{padding:22px}
+      h1{font-size:2rem}
+    }
+    @media (max-width: 575.98px) {
+      .card-pane{padding:16px}
+      h1{font-size:1.6rem}
+      p.lead{font-size:0.95rem}
+      .btn.btn-light { width: 100%; display: block; }
+    }
   </style>
 </head>
 <body>

@@ -18,6 +18,30 @@
     .service-card, .case-card { background: rgba(212,175,55,0.04); padding: 25px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.08); box-shadow: 0 5px 18px rgba(0,0,0,0.6); color: #f7edd4; transition: 0.3s; }
     .service-card:hover, .case-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.7); }
     a.btn-light { background: linear-gradient(90deg,#fff2c6,#ffd873); color: #0b0b0b; border: none; }
+
+    /* Responsive adjustments */
+    @media (max-width: 991.98px) {
+      .hero { padding: 80px 18px; }
+      .hero h1 { font-size: 2.6rem; }
+      .hero p { font-size: 1.05rem; }
+    }
+
+    @media (max-width: 575.98px) {
+      .hero { padding: 48px 14px; }
+      .hero h1 { font-size: 1.9rem; }
+      .hero p { font-size: 0.95rem; }
+      .hero .btn { width: 100%; max-width: 360px; display: inline-block; margin-left: auto; margin-right: auto; }
+      .service-card, .case-card { padding: 16px; }
+      .section-title { margin-bottom: 24px; font-size: 1.25rem; text-align: center; }
+      /* Reduce row gap on mobile */
+      .row.g-4 { gap: 12px !important; }
+    }
+
+    /* Ensure case card action alignment switches to center on small screens */
+    .case-card .card-actions { text-align: right; }
+    @media (max-width: 767.98px) {
+      .case-card .card-actions { text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -63,7 +87,7 @@ At Next Layer Web Crafters, we don’t just build websites — we craft digital 
           <p><strong>🛠 Approach:</strong> Crafted a polished UI, clear CTAs, and responsive layouts focused on UX.</p>
           <p><strong>🚀 Results:</strong> Improved engagement, longer session durations, higher lead capture.</p>
           <p><strong>🧰 Tools:</strong> Figma, HTML, CSS, Bootstrap</p>
-          <div class="text-end mt-3">
+          <div class="card-actions mt-3">
             <a href="case3-details.html" class="btn btn-light">View Details</a>
           </div>
         </div>
@@ -76,7 +100,7 @@ At Next Layer Web Crafters, we don’t just build websites — we craft digital 
           <p><strong>🛠 Approach:</strong> Modern UI, responsive sections, optimized speed.</p>
           <p><strong>🚀 Results:</strong> Page speed 48 → 92, bounce rate -40%, more leads.</p>
           <p><strong>🧰 Tools:</strong> HTML, CSS, Bootstrap, JS</p>
-          <div class="text-end mt-3">
+          <div class="card-actions mt-3">
             <a href="case1-details.html" class="btn btn-light">View Details</a>
           </div>
         </div>
@@ -89,7 +113,7 @@ At Next Layer Web Crafters, we don’t just build websites — we craft digital 
           <p><strong>🛠 Approach:</strong> Product grid, quick cart, UI/UX optimized.</p>
           <p><strong>🚀 Results:</strong> Loading time -60%, sales conversions up.</p>
           <p><strong>🧰 Tools:</strong> WordPress, WooCommerce, PHP, Elementor</p>
-          <div class="text-end mt-3">
+          <div class="card-actions mt-3">
             <a href="case2-details.html" class="btn btn-light">View Details</a>
           </div>
         </div>
