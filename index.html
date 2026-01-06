@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Next-Layer WebCrafters</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     /* Changed: black + gold theme */
-    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #000000, #0b0b0b); color: #f7ead6; }
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #000000, #0b0b0b); color: #f7ead6;  overflow-x: hidden; max-width: 100%;}
     .hero { background: linear-gradient(135deg, #0b0b0b, #2b1f0d); color: #f7ead6; padding: 120px 20px; text-align: center; }
     .hero h1 { font-size: 3.5rem; text-shadow: 0 2px 8px rgba(0,0,0,0.7); letter-spacing: 1px; color: #ffd873; }
     .hero p { font-size: 1.3rem; font-weight: 300; text-shadow: 0 1px 4px rgba(0,0,0,0.5); color: #f3e9c9; }
@@ -19,21 +19,31 @@
     .service-card:hover, .case-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.7); }
     a.btn-light { background: linear-gradient(90deg,#fff2c6,#ffd873); color: #0b0b0b; border: none; }
 
+    /* Services alignment fixes */
+    #services .row { justify-content: center; align-items: stretch; }
+    #services .col-md-4 { display: flex; }
+    #services .col-md-4 > .service-card { flex: 1 1 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 40px; padding: 25px; }
+
     /* Responsive adjustments */
     @media (max-width: 991.98px) {
-      .hero { padding: 80px 18px; }
-      .hero h1 { font-size: 2.6rem; }
+      .hero { padding: 56px 18px; }
+      .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1.05rem; }
+
+      /* make service cards stack nicely on medium/small screens */
+      #services .col-md-4 { flex: 0 0 48%; max-width: 48%; margin: 0 1%; }
+      .row.g-4 { gap: 18px !important; }
     }
 
     @media (max-width: 575.98px) {
-      .hero { padding: 48px 14px; }
-      .hero h1 { font-size: 1.9rem; }
+      .hero { padding: 40px 14px; }
+      .hero h1 { font-size: 1.6rem; }
       .hero p { font-size: 0.95rem; }
-      .hero .btn { width: 100%; max-width: 360px; display: inline-block; margin-left: auto; margin-right: auto; }
-      .service-card, .case-card { padding: 16px; }
-      .section-title { margin-bottom: 24px; font-size: 1.25rem; text-align: center; }
-      /* Reduce row gap on mobile */
+      .hero .btn { width: 100%; max-width: 360px; display: block; margin: 0 auto; }
+      #services .col-md-4 { flex: 0 0 100%; max-width: 100%; margin: 0; }
+      #services .col-md-4 > .service-card { min-height: 100px; padding: 14px; }
+      .service-card, .case-card { padding: 14px; }
+      .section-title { text-align: center; font-size: 1.1rem; }
       .row.g-4 { gap: 12px !important; }
     }
 
@@ -73,6 +83,7 @@ At Next Layer Web Crafters, we don’t just build websites — we craft digital 
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><div class="service-card text-center">WordPress Development</div></div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="250"><div class="service-card text-center">Front-End Development</div></div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="300"><div class="service-card text-center">SEO & Digital Marketing</div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="50"><div class="service-card text-center">Creative Illustration & Animated Visuals</div></div>
     </div>
   </section>
 
@@ -115,6 +126,18 @@ At Next Layer Web Crafters, we don’t just build websites — we craft digital 
           <p><strong>🧰 Tools:</strong> WordPress, WooCommerce, PHP, Elementor</p>
           <div class="card-actions mt-3">
             <a href="case2-details.html" class="btn btn-light">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-left" data-aos-delay="150">
+        <div class="case-card">
+          <h4 class="fw-bold mb-3">Creative Illustration & Character Design</h4>
+          <p>Professional custom illustrations and character designs created for branding, marketing, digital products, merchandise, social media, games, and websites. Each design is crafted to reflect personality, storytelling, and visual identity.</p>
+          <p><strong>✔ Offerings:</strong> Custom characters & mascots, digital illustrations, animated visuals.</p>
+          <p><strong>🧰 Tools:</strong> Adobe Illustrator, Photoshop, After Effects, Lottie, Figma</p>
+          <div class="card-actions mt-3">
+            <a href="case4-details.html" class="btn btn-light">View Details</a>
           </div>
         </div>
       </div>
