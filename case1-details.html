@@ -3,26 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Business Website Redesign — Next-Layer WebCrafters</title>
+  <title>Static Business Website — Next-Layer WebCrafters</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#000,#0b0b0b);color:#f7ead6}
-    .hero{padding:80px 20px;text-align:center;background:linear-gradient(135deg,#0b0b0b,#2b1f0d);color:#f7ead6;border-bottom:1px solid rgba(212,175,55,0.06)}
-    .hero h1{color:#ffd873;font-size:2.4rem;margin-bottom:.5rem}
-    .lead-sub{color:#f3e9c9;margin-bottom:1.25rem}
+    body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#000,#0b0b0b);color:#f7ead6;-webkit-font-smoothing:antialiased}
+    .hero{padding:72px 20px;text-align:center;background:linear-gradient(135deg,#0b0b0b,#2b1f0d);color:#f7ead6;border-bottom:1px solid rgba(212,175,55,0.06)}
+    .hero h1{color:#ffd873;font-size:2.2rem;margin-bottom:.5rem;line-height:1.05}
+    .lead-sub{color:#f3e9c9;margin-bottom:1rem;font-size:1rem}
     .section-title{color:#ffe8a8;font-weight:700;margin-bottom:1rem}
-    .content-card{background:rgba(212,175,55,0.03);padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,0.06);box-shadow:0 6px 20px rgba(0,0,0,0.6);color:#f7edd4}
-    ul.simple{padding-left:1.1rem}
-    .back-link{color:#0b0b0b;background:linear-gradient(90deg,#fff2c6,#ffd873);border:none;padding:.5rem .9rem;border-radius:8px;text-decoration:none;font-weight:600}
+    .content-card{background:rgba(212,175,55,0.03);padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,0.06);box-shadow:0 6px 20px rgba(0,0,0,0.6);color:#f7edd4;display:flex;flex-direction:column;gap:.6rem}
+    ul.simple{padding-left:1.1rem;margin:0}
+    .back-link{color:#0b0b0b;background:linear-gradient(90deg,#fff2c6,#ffd873);border:none;padding:.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block}
     footer{padding:28px;text-align:center;color:#d4af37;background:#070707;margin-top:40px}
-    @media(max-width:575px){.hero{padding:40px}.hero h1{font-size:1.6rem}}
+    @media (max-width:575.98px){.hero{padding:32px 16px}.hero h1{font-size:1.5rem}.lead-sub{font-size:.95rem}.content-card{padding:14px;border-radius:10px}.section-title{text-align:center;font-size:1.05rem}.back-link{display:block;width:100%;text-align:center;padding:.75rem;border-radius:10px}.container{padding-left:12px;padding-right:12px}}
+    @media (min-width:576px) and (max-width:991.98px){.hero{padding:56px 20px}.hero h1{font-size:1.9rem}.content-card{padding:18px}.section-title{font-size:1.05rem}.row.g-4{gap:18px}}
+    .content-card p,.content-card li{line-height:1.5;font-size:.98rem}
   </style>
 </head>
 <body>
   <header class="hero" data-aos="fade-down">
-    <h1>Business Website Redesign</h1>
-    <p class="lead-sub">Modern UI, responsive layouts and optimized performance to convert visitors into leads.</p>
+    <h1>Static Business Website</h1>
+    <p class="lead-sub">Fast-loading, professional website that establishes your online presence and converts visitors into customers.</p>
     <a href="index.html" class="back-link">← Back to Home</a>
   </header>
 
@@ -30,42 +32,69 @@
     <section class="mb-4" data-aos="fade-up">
       <h2 class="section-title">Overview</h2>
       <div class="content-card">
-        <p>We redesigned an outdated, slow website with a modern UI, clearer content structure, and improved performance, focusing on conversion-driven layouts and responsive design.</p>
+        <p>We built a professional, high-performance website for a local business that had no online presence. The site features clean design, fast loading times, and clear CTAs to drive customer inquiries and conversions.</p>
       </div>
     </section>
 
     <section class="mb-4" data-aos="fade-up" data-aos-delay="50">
-      <h3 class="section-title">Problem & Approach</h3>
+      <h3 class="section-title">Problem & Challenge</h3>
       <div class="content-card">
-        <p><strong>Problem:</strong> Old website was slow and outdated.</p>
-        <p><strong>Approach:</strong> Modern UI, responsive sections, content hierarchy and speed optimization to improve engagement and conversions.</p>
+        <p><strong>Problem:</strong> Local business had no online presence, missing out on potential customers searching for their services.</p>
+        <p><strong>Impact:</strong> Lost leads, no way for customers to find contact info or service details, weak competitive positioning.</p>
       </div>
     </section>
 
-    <section class="row g-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+    <section class="mb-4" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="section-title">Our Approach</h3>
+      <div class="content-card">
+        <ul class="simple">
+          <li>Built a responsive, fast-loading static website using HTML, CSS, and Bootstrap</li>
+          <li>Designed clear service pages with engaging copy and compelling CTAs</li>
+          <li>Implemented contact forms and direct inquiry channels</li>
+          <li>Optimized for mobile and desktop viewing</li>
+          <li>Set up basic SEO fundamentals (meta tags, structure, performance)</li>
+          <li>Deployed on reliable, fast hosting for optimal performance</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="row g-4 mb-4" data-aos="fade-up" data-aos-delay="150">
       <div class="col-md-6">
-        <h4 class="section-title">Results</h4>
+        <h4 class="section-title">Results Achieved</h4>
         <div class="content-card">
-          <p>Page speed 48 → 92, bounce rate -40%, increased leads and better user engagement.</p>
+          <ul class="simple">
+            <li>✓ 50+ monthly inquiries from website</li>
+            <li>✓ Improved local search visibility</li>
+            <li>✓ Fast page load times (&lt;2 seconds)</li>
+            <li>✓ Professional brand presence established</li>
+          </ul>
         </div>
       </div>
       <div class="col-md-6">
         <h4 class="section-title">Tools & Technologies</h4>
         <div class="content-card">
-          <p>HTML, CSS, Bootstrap, JavaScript, Figma</p>
+          <p>HTML5, CSS3, Bootstrap 5, JavaScript, Figma, Git</p>
         </div>
       </div>
     </section>
 
-    <section class="mb-4" data-aos="fade-up" data-aos-delay="150">
-      <h3 class="section-title">Use Cases</h3>
+    <section class="mb-4" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="section-title">Key Features Delivered</h3>
       <div class="content-card">
-        <p>Business websites, lead-generation pages, portfolio & corporate sites.</p>
+        <ul class="simple">
+          <li>Fully responsive design (mobile, tablet, desktop)</li>
+          <li>Service showcase pages with descriptions</li>
+          <li>Contact form with email notifications</li>
+          <li>Testimonials section for social proof</li>
+          <li>About company page with team information</li>
+          <li>Fast performance optimization</li>
+          <li>SEO-friendly structure and meta tags</li>
+        </ul>
       </div>
     </section>
 
     <div class="text-center mb-4">
-      <a href="contact.html" class="back-link">Contact Us about this project</a>
+      <a href="contact.html" class="back-link">Contact Us for your business website</a>
     </div>
   </main>
 

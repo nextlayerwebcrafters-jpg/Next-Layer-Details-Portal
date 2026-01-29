@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials — Next-Layer WebCrafters</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000, #0b0b0b);
+      color: #f7ead6;
+      overflow-x: hidden;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(11,11,11,0.95));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212,175,55,0.1);
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .navbar-brand {
+      color: #ffd873 !important;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-nav .nav-link {
+      color: #f3e9c9 !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 8px 12px !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffd873 !important;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #ffd873, #d4af37);
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-toggler {
+      border: 1px solid rgba(212,175,55,0.3);
+      color: #ffd873 !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0b0b0b, #2b1f0d);
+      color: #f7ead6;
+      padding: 100px 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(212,175,55,0.1);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #ffd873;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #f3e9c9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      color: #f7ead6;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      color: #ffd873;
+    }
+
+    /* Main Section */
+    .testimonials-section {
+      padding: 80px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      color: #ffe8a8;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    /* Testimonial Grid */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .testimonial-card {
+      background: rgba(212,175,55,0.04);
+      border: 1px solid rgba(212,175,55,0.1);
+      border-radius: 15px;
+      padding: 35px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      font-size: 80px;
+      color: rgba(212,175,55,0.1);
+      font-weight: 700;
+      z-index: 0;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(212,175,55,0.15);
+      border-color: rgba(212,175,55,0.3);
+      background: rgba(212,175,55,0.08);
+    }
+
+    /* Stars */
+    .stars {
+      color: #ffd873;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+    }
+
+    /* Testimonial Text */
+    .testimonial-text {
+      color: #f7edd4;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      flex-grow: 1;
+      position: relative;
+      z-index: 1;
+      font-style: italic;
+    }
+
+    /* Client Info */
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(212,175,55,0.1);
+    }
+
+    .client-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffd873, #d4af37);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0b0b0b;
+      font-weight: 700;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .client-details h4 {
+      color: #ffd873;
+      font-weight: 600;
+      margin: 0 0 3px 0;
+      font-size: 1rem;
+    }
+
+    .client-details p {
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: rgba(212,175,55,0.03);
+      border: 1px solid rgba(212,175,55,0.1);
+      border-radius: 15px;
+      padding: 50px 20px;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .stat-item h3 {
+      color: #ffd873;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .stat-item p {
+      color: #f3e9c9;
+      font-size: 0.95rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: rgba(212,175,55,0.1);
+      border: 2px solid rgba(212,175,55,0.2);
+      border-radius: 15px;
+      padding: 50px 30px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta-section h2 {
+      color: #ffd873;
+      margin-bottom: 15px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .cta-section p {
+      color: #f3e9c9;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .btn-primary-custom {
+      background: linear-gradient(90deg, #ffd873, #d4af37);
+      color: #0b0b0b;
+      padding: 12px 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .btn-primary-custom:hover {
+      filter: brightness(1.05);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+      color: #0b0b0b;
+      text-decoration: none;
+    }
+
+    .btn-secondary-custom {
+      background: rgba(212,175,55,0.1);
+      color: #ffd873;
+      padding: 12px 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid rgba(212,175,55,0.3);
+      transition: all 0.3s;
+      display: inline-block;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .btn-secondary-custom:hover {
+      background: rgba(212,175,55,0.2);
+      color: #ffd873;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #070707;
+      color: #d4af37;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+      border-top: 1px solid rgba(212,175,55,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .testimonial-card {
+        padding: 25px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .cta-section {
+        padding: 30px 20px;
+      }
+
+      .cta-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .btn-secondary-custom {
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .testimonials-section {
+        padding: 40px 15px;
+      }
+
+      .testimonial-card {
+        padding: 20px;
+      }
+
+      .testimonial-text {
+        font-size: 0.9rem;
+      }
+
+      .client-info {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .client-details h4 {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="index.html">Next-Layer WebCrafters</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Testimonials.html">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" data-aos="fade-down">
+    <a href="index.html" class="back-link">← Back to Home</a>
+    <h1>What Our Clients Say</h1>
+    <p>Real feedback from businesses we've helped transform their digital presence</p>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <h2 class="section-title" data-aos="fade-up">Client Testimonials</h2>
+
+    <div class="testimonials-grid">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Next-Layer WebCrafters transformed our online presence completely. Our website now loads faster, looks professional, and we've seen a 50% increase in customer inquiries within just 3 months. Highly recommended!"
+        </p>
+        <div class="client-info">
+          <div class="client-avatar">AR</div>
+          <div class="client-details">
+            <h4>Ahmed Raza</h4>
+            <p>Owner, Raza & Co. Trading</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "The team at Next-Layer WebCrafters delivered exactly what we needed. Their SEO expertise helped us rank on the first page of Google, and the website design is absolutely stunning. Great communication throughout!"
+        </p>
+        <div class="client-info">
+          <div class="client-avatar">SK</div>
+          <div class="client-details">
+            <h4>Sarah Khan</h4>
+            <p>Founder, Digital Marketing Hub</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Professional, creative, and results-driven. They built our e-commerce platform from scratch and it's been generating consistent sales. The support after launch is also excellent. Worth every penny!"
+        </p>
+        <div class="client-info">
+          <div class="client-avatar">MB</div>
+          <div class="client-details">
+            <h4>Muhammad Bilal</h4>
+            <p>CEO, Tech Solutions Inc.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "We were blown away by the quality of the landing page they created for our campaign. The conversion rate exceeded our expectations, and the design is elegant yet functional. Team was responsive and professional."
+        </p>
+        <div class="client-info">
+          <div class="client-avatar">HA</div>
+          <div class="client-details">
+            <h4>Hana Ahmed</h4>
+            <p>Marketing Director, Global Ventures</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 5 -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "We needed a website redesign and Next-Layer WebCrafters delivered beyond expectations. The new site is mobile-friendly, fast, and beautiful. Our bounce rate dropped significantly and engagement increased!"
+        </p>
+        <div class="client-info">
+          <div class="client-avatar">FA</div>
+          <div class="client-details">
+            <h4>Fatima Ahmad</h4>
+            <p>Owner, Fashion Boutique</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 6 -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Outstanding service from start to finish. They listened to our needs, understood our business goals, and delivered a website that perfectly represents our brand. The team is knowledgeable and easy to work with."
+        </p>
+        <div class="client-info">
+          <div class="client-avatar">OS</div>
+          <div class="client-details">
+            <h4>Omar Saeed</h4>
+            <p>Director, Consulting Group</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section" data-aos="fade-up">
+      <h3 style="color: #ffd873; font-size: 1.8rem; margin-bottom: 10px;">Our Track Record</h3>
+      <p style="color: #f3e9c9; font-size: 1rem; margin-bottom: 20px;">Proven results for businesses across industries</p>
+      
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>50+</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-item">
+          <h3>98%</h3>
+          <p>Client Satisfaction</p>
+        </div>
+        <div class="stat-item">
+          <h3>3.5x</h3>
+          <p>Avg. Traffic Increase</p>
+        </div>
+        <div class="stat-item">
+          <h3>12+</h3>
+          <p>Industry Experience</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section" data-aos="fade-up">
+      <h2>Ready to Join Our Satisfied Clients?</h2>
+      <p>Let's discuss how we can help your business grow with a stunning, high-performing website.</p>
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+        <a href="contact.html" class="btn-primary-custom">Start Your Project</a>
+        <a href="projects.html" class="btn-secondary-custom">View Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>© 2025 Next-Layer WebCrafters</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
