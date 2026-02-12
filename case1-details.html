@@ -9,8 +9,75 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    /* Transparent Navbar */
+    .navbar-transparent {
+      background: rgba(255, 255, 255, 0.15) !important;
+      box-shadow: none;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      z-index: 1040;
+    }
+    .navbar-transparent .navbar-brand,
+    .navbar-transparent .nav-link {
+      color: #ffe8a8 !important;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .navbar-transparent .nav-link.active,
+    .navbar-transparent .nav-link:focus,
+    .navbar-transparent .nav-link:hover {
+      color: #ffd873 !important;
+    }
+    body { padding-top: 64px; }
+    @media (max-width: 575.98px) {
+      body { padding-top: 56px; }
+    }
+  </style>
+
+  <style>
     body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#000,#0b0b0b);color:#f7ead6;-webkit-font-smoothing:antialiased}
-    .hero{padding:72px 20px;text-align:center;background:linear-gradient(135deg,#0b0b0b,#2b1f0d);color:#f7ead6;border-bottom:1px solid rgba(212,175,55,0.06)}
+    .hero {
+      padding: 72px 20px;
+      text-align: center;
+      color: #f7ead6;
+      border-bottom: 1px solid rgba(212,175,55,0.06);
+      position: relative;
+      min-height: 340px;
+      overflow: hidden;
+    }
+    .hero .carousel,
+    .hero .carousel-inner,
+    .hero .carousel-item {
+      height: 100%;
+      min-height: 340px;
+    }
+    .hero .carousel-item {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      transition: opacity 0.7s;
+    }
+    .hero .carousel-item.active {
+      position: absolute;
+      z-index: 2;
+      opacity: 1;
+    }
+    .hero .carousel-item:not(.active) {
+      opacity: 0;
+    }
+    .hero .hero-content {
+      position: relative;
+      z-index: 3;
+      background: rgba(11,11,11,0.45);
+      padding: 32px 18px;
+      border-radius: 16px;
+      display: inline-block;
+      margin-top: 40px;
+    }
+    .hero .carousel-control-prev, .hero .carousel-control-next {
+      z-index: 4;
+    }
     .hero h1{color:#ffd873;font-size:2.2rem;margin-bottom:.5rem;line-height:1.05}
     .lead-sub{color:#f3e9c9;margin-bottom:1rem;font-size:1rem}
     .section-title{color:#ffe8a8;font-weight:700;margin-bottom:1rem}
@@ -63,10 +130,54 @@
   </style>
 </head>
 <body>
+
+  <!-- Transparent Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Next-Layer WebCrafters</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Testimonials.html">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <header class="hero" data-aos="fade-down">
-    <h1>Static Business Website</h1>
-    <p class="lead-sub">Fast-loading, professional website that establishes your online presence and converts visitors into customers.</p>
-    <a href="index.html" class="back-link">← Back to Home</a>
+    <div id="heroBgCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image: url('assets/images/hero1.jpg');"></div>
+        <div class="carousel-item" style="background-image: url('assets/images/hero2.jpg');"></div>
+        <div class="carousel-item" style="background-image: url('assets/images/hero3.jpg');"></div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroBgCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroBgCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <div class="hero-content mx-auto">
+        <h1>Static Business Website</h1>
+        <p class="lead-sub">Fast-loading, professional website that establishes your online presence and converts visitors into customers.</p>
+        <a href="index.html" class="back-link mt-3">← Back to Home</a>
+      </div>
+    </div>
   </header>
 
   <main class="container py-5">

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Next-Layer WebCrafters</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -112,14 +114,43 @@
       color: #ffd873 !important;
     }
 
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3Cpath%20stroke='%23ffd873'%20stroke-width='2'%20stroke-linecap='round'%20stroke-miterlimit='10'%20d='M4%207h22M4%2015h22M4%2023h22'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
     /* Changed: black + gold theme */
     body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #000000, #0b0b0b); color: #f7ead6;  overflow-x: hidden; max-width: 100%;}
-    .hero { background: linear-gradient(135deg, #0b0b0b, #2b1f0d); color: #f7ead6; padding: 120px 20px; text-align: center; }
+    .hero {
+      position: relative;
+      color: #f7ead6;
+      padding: 120px 20px;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(11,11,11,0.6), rgba(43,31,13,0.35));
+    }
+    .hero video.bg-video {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.45;
+    }
+    .hero .carousel,
+    .hero .carousel-inner,
+    .hero .carousel-item {
+      position: relative;
+      z-index: 2;
+    }
     .hero h1 { font-size: 3.5rem; text-shadow: 0 2px 8px rgba(0,0,0,0.7); letter-spacing: 1px; color: #ffd873; }
     .hero p { font-size: 1.3rem; font-weight: 300; text-shadow: 0 1px 4px rgba(0,0,0,0.5); color: #f3e9c9; }
     .hero .btn { background: linear-gradient(90deg,#ffd873,#d4af37); color: #0b0b0b; font-weight: 600; border: none; transition: 0.3s; }
     .hero .btn:hover { filter: brightness(1.03); transform: scale(1.03); }
     .section-title { font-weight: 700; margin-bottom: 40px; color: #ffe8a8; }
+    /* Media styles for inline portfolio images */
+    .case-img{width:100%;height:auto;border-radius:10px;margin-bottom:12px;object-fit:cover;border:1px solid rgba(0,0,0,0.04)}
+    .case-img{width:100%;height:auto;border-radius:10px;margin-bottom:12px;object-fit:cover;border:1px solid rgba(0,0,0,0.04)}
     .service-card, .case-card { background: rgba(212,175,55,0.04); padding: 25px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.08); box-shadow: 0 5px 18px rgba(0,0,0,0.6); color: #f7edd4; transition: 0.3s; }
     .service-card:hover, .case-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.7); }
     a.btn-light { background: linear-gradient(90deg,#fff2c6,#ffd873); color: #0b0b0b; border: none; }
@@ -129,6 +160,14 @@
     #services .col-md-3 { display: flex; }
     #services .col-md-3 > .service-card { flex: 1 1 auto; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; text-align: left; min-height: 100%; padding: 25px; }
 
+    /* Case Studies specific styling */
+    #case-studies .col-md-3 { display: flex; }
+    #case-studies .col-md-3 > .case-card { flex: 1 1 auto; }
+    
+    /* Ensure case card action alignment switches to center on small screens */
+    .case-card .card-actions { text-align: right; }
+    .case-card { display: flex; flex-direction: column; height: 100%; }
+    
     /* Responsive adjustments */
     @media (max-width: 991.98px) {
       .hero { padding: 56px 18px; }
@@ -137,7 +176,15 @@
 
       /* make service cards stack nicely on medium/small screens */
       #services .col-md-3 { flex: 0 0 48%; max-width: 48%; margin: 0 1%; }
+      
+      /* Case studies cards on tablets */
+      #case-studies .col-md-3 { flex: 0 0 48%; max-width: 48%; margin: 0 1%; }
+      
       .row.g-4 { gap: 18px !important; }
+    }
+
+    @media (max-width: 767.98px) {
+      .case-card .card-actions { text-align: center; }
     }
 
     @media (max-width: 575.98px) {
@@ -145,17 +192,18 @@
       .hero h1 { font-size: 1.6rem; }
       .hero p { font-size: 0.95rem; }
       .hero .btn { width: 100%; max-width: 360px; display: block; margin: 0 auto; }
+      
+      /* Service cards on mobile */
       #services .col-md-3 { flex: 0 0 100%; max-width: 100%; margin: 0; }
       #services .col-md-3 > .service-card { min-height: auto; padding: 20px; }
+      
+      /* Case studies cards on mobile */
+      #case-studies .col-md-3 { flex: 0 0 100%; max-width: 100%; margin: 0; }
+      #case-studies .col-md-3 > .case-card { min-height: auto; padding: 20px; }
+      
       .service-card, .case-card { padding: 14px; }
       .section-title { text-align: center; font-size: 1.1rem; }
       .row.g-4 { gap: 12px !important; }
-    }
-
-    /* Ensure case card action alignment switches to center on small screens */
-    .case-card .card-actions { text-align: right; }
-    .case-card { display: flex; flex-direction: column; height: 100%; }
-    @media (max-width: 767.98px) {
       .case-card .card-actions { text-align: center; }
     }
 
@@ -208,7 +256,10 @@
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid px-4">
-      <a class="navbar-brand" href="index.html">Next-Layer WebCrafters</a>
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo.png" alt="Next-Layer logo" style="height:36px; width:auto; margin-right:10px;">
+        Next-Layer WebCrafters
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -229,10 +280,38 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" data-aos="fade-down">
-    <h1 class="display-4 fw-bold">Next-Layer WebCrafters</h1>
-    <p class="lead mt-3">I help small businesses get more customers with professional websites.</p>
-    <a href="projects.html" class="btn btn-dark btn-lg mt-4">View Our Demo Projects</a>
+  <section class="hero" data-aos="fade-down" style="position:relative;">
+    <video class="bg-video" autoplay loop muted playsinline>
+      <source src="1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h1 class="display-4 fw-bold">Next-Layer WebCrafters</h1>
+          <p class="lead mt-3">I help small businesses get more customers with professional websites.</p>
+          <a href="projects.html" class="btn btn-dark btn-lg mt-4">View Our Demo Projects</a>
+        </div>
+        <div class="carousel-item">
+          <h1 class="display-4 fw-bold">Modern, Fast & Responsive</h1>
+          <p class="lead mt-3">Get a beautiful, mobile-friendly website that loads in seconds and impresses your clients.</p>
+          <a href="contact.html" class="btn btn-dark btn-lg mt-4">Get a Free Quote</a>
+        </div>
+        <div class="carousel-item">
+          <h1 class="display-4 fw-bold">Grow Your Business Online</h1>
+          <p class="lead mt-3">Boost your brand, increase leads, and stand out from the competition with our web solutions.</p>
+          <a href="Testimonials.html" class="btn btn-dark btn-lg mt-4">See Client Results</a>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </section>
 
   <!-- Services Section -->
@@ -272,11 +351,10 @@
     <div class="row g-4">
       <div class="col-md-3 col-sm-6" data-aos="fade-right" data-aos-delay="50">
         <div class="case-card">
+          <img src="construction%20Company%201.png" alt="Case study 1" class="case-img">
           <h4 class="fw-bold mb-3" style="color: #ffd873;">Static Business Website</h4>
-          <p><strong>🛑 Problem:</strong> Local business had no online presence.</p>
-          <p><strong>🛠 Approach:</strong> Built a fast, professional website with clear service pages and contact forms.</p>
-          <p><strong>🚀 Results:</strong> 50+ monthly inquiries, improved local visibility.</p>
-          <p><strong>🧰 Tools:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+          <p>Fast, professional site that improved local visibility and leads.</p>
+          <p class="mb-0" style="opacity:0.85">Tools: HTML, CSS, Bootstrap</p>
           <div class="card-actions mt-3">
             <a href="case1-details.html" class="btn btn-light">View Details</a>
           </div>
@@ -285,11 +363,10 @@
 
       <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
         <div class="case-card">
+          <img src="construction%20company%202.png" alt="Case study 2" class="case-img">
           <h4 class="fw-bold mb-3" style="color: #ffd873;">High-Converting Landing Page</h4>
-          <p><strong>🛑 Problem:</strong> Campaign needed an optimized landing page to capture leads.</p>
-          <p><strong>🛠 Approach:</strong> Designed focused landing page with compelling CTAs and minimal distractions.</p>
-          <p><strong>🚀 Results:</strong> 28% conversion rate, 3x lead increase.</p>
-          <p><strong>🧰 Tools:</strong> HTML, CSS, Figma, Bootstrap</p>
+          <p>Conversion-focused landing page that tripled campaign leads.</p>
+          <p class="mb-0" style="opacity:0.85">Tools: HTML, CSS, Figma</p>
           <div class="card-actions mt-3">
             <a href="case2-details.html" class="btn btn-light">View Details</a>
           </div>
@@ -298,11 +375,10 @@
 
       <div class="col-md-3 col-sm-6" data-aos="fade-left" data-aos-delay="150">
         <div class="case-card">
+          <img src="construction%20Company%203.png" alt="Case study 3" class="case-img">
           <h4 class="fw-bold mb-3" style="color: #ffd873;">Website Redesign & Optimization</h4>
-          <p><strong>🛑 Problem:</strong> Outdated website, slow loading, poor mobile experience.</p>
-          <p><strong>🛠 Approach:</strong> Complete redesign with modern UI, responsive design, and performance optimization.</p>
-          <p><strong>🚀 Results:</strong> Page speed 48 → 92, bounce rate -40%, lead generation up 65%.</p>
-          <p><strong>🧰 Tools:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+          <p>Modern redesign that boosted speed and reduced bounce rate significantly.</p>
+          <p class="mb-0" style="opacity:0.85">Tools: HTML, CSS, Performance</p>
           <div class="card-actions mt-3">
             <a href="case3-details.html" class="btn btn-light">View Details</a>
           </div>
@@ -311,11 +387,10 @@
 
       <div class="col-md-3 col-sm-6" data-aos="fade-left" data-aos-delay="200">
         <div class="case-card">
+          <img src="product 0.1.jpg" alt="Case study 4" class="case-img">
           <h4 class="fw-bold mb-3" style="color: #ffd873;">SEO Setup & Rankings</h4>
-          <p><strong>🛑 Problem:</strong> Website invisible in search results, no organic traffic.</p>
-          <p><strong>🛠 Approach:</strong> Implemented proper meta tags, structured data, site optimization, and keyword strategy.</p>
-          <p><strong>🚀 Results:</strong> Ranked in top 5 for target keywords, organic traffic 10x increase.</p>
-          <p><strong>🧰 Tools:</strong> SEMrush, Google Analytics, HTML optimization</p>
+          <p>Structured SEO work that delivered measurable organic growth.</p>
+          <p class="mb-0" style="opacity:0.85">Tools: SEO, Analytics</p>
           <div class="card-actions mt-3">
             <a href="case4-details.html" class="btn btn-light">View Details</a>
           </div>
@@ -327,11 +402,7 @@
     <!-- About Section -->
   <section class="container py-5" id="about">
     <h2 class="section-title text-center" data-aos="fade-up">About Us</h2>
-    <p class="text-center lead" data-aos="fade-up" data-aos-delay="100">Next Layer Web Crafters is a modern web development agency since 2025, focused on building high-performance, visually appealing, and business-driven digital solutions. We specialize in creating responsive websites, e-commerce platforms, and custom web experiences that help brands grow, engage users, and convert visitors into customers.<br>
-
-Our approach combines clean UI/UX design, scalable development, and performance optimization to deliver results-oriented websites. From concept to deployment, we ensure every project meets modern standards, loads fast, and aligns with the client’s business goals.<br>
-
-At Next Layer Web Crafters, we don’t just build websites — we craft digital experiences that create impact, trust, and long-term value.</p>
+    <p class="text-center lead" data-aos="fade-up" data-aos-delay="100">We build modern, conversion-focused websites that help small businesses grow online. Our work combines clean design, fast performance, and measurable outcomes.</p>
   </section>
 
   <!-- Contact Section -->

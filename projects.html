@@ -28,6 +28,7 @@
       box-shadow:0 5px 20px rgba(0,0,0,0.5);
       display:flex;
       flex-direction:column;
+      height:100%
     }
     
     .project-card:hover{
@@ -139,8 +140,41 @@
       text-decoration:none
     }
     
-    /* Section spacing */
-    #projects{padding:60px 20px;background:linear-gradient(135deg,#0b0b0b,#1a1410)}
+    /* Responsive design for project grid */
+    @media(max-width:1024px){
+      .project-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+      .project-header{padding:25px 18px}
+      .project-content{padding:20px}
+      .project-header h3{font-size:1.2rem}
+    }
+
+    @media(max-width:768px){
+      .hero{padding:60px 20px}
+      .hero h1{font-size:2rem}
+      .section-title{font-size:1.5rem;margin-bottom:2rem}
+      .project-grid{grid-template-columns:1fr;gap:20px}
+      .project-stats{flex-direction:column;gap:15px}
+      .project-header{padding:20px 15px}
+      .project-content{padding:15px}
+      .project-header h3{font-size:1.1rem}
+      .project-content p{font-size:0.9rem}
+    }
+
+    @media(max-width:480px){
+      .hero{padding:40px 15px}
+      .hero h1{font-size:1.5rem}
+      .hero p{font-size:0.95rem}
+      .section-title{font-size:1.2rem;margin-bottom:1.5rem}
+      .project-grid{gap:15px}
+      .project-header{padding:15px 12px}
+      .project-content{padding:12px}
+      .project-header h3{font-size:1rem}
+      .project-content p{font-size:0.85rem;margin-bottom:10px}
+      .project-stats{gap:12px;margin:15px 0;padding:12px 0}
+      .tools-list{gap:6px}
+      .tool-tag{padding:4px 10px;font-size:0.7rem}
+      .btn-view{padding:8px 12px;font-size:0.85rem}
+    }
     
     /* Footer */
     .footer-cta{
@@ -193,15 +227,6 @@
     
     .back-link:hover{
       color:#ffd873
-    }
-    
-    /* Responsive */
-    @media(max-width:768px){
-      .hero{padding:60px 20px}
-      .hero h1{font-size:2rem}
-      .section-title{font-size:1.5rem;margin-bottom:2rem}
-      .project-grid{grid-template-columns:1fr;gap:20px}
-      .project-stats{flex-direction:column;gap:15px}
     }
 
     /* WhatsApp Button */
